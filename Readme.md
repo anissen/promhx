@@ -83,7 +83,7 @@ necessary.
 var dp1 = new Deferred<Int>();
 
 // Declare a promised value, using the deferred
-var p1 = new Promise<Int>(d1);
+var p1 = new Promise<Int>(dp1);
 // var p1 = dp1.promise(); // alternate form
 
 // Simple: deliver promise when value is available. Stream works the same.
@@ -178,8 +178,7 @@ dp3.resolve('hi');
 
 // You can "resolve" a stream as well
 ds1.resolve(1);
-ds1.update(1);
-ds2.update(2);
+ds2.resolve(2);
 ```
 
 # Error management
